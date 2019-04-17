@@ -1,8 +1,13 @@
 import * as fromIngresoEgreso from './ingreso-egreso.actions';
 import {IngresoEgresoModel} from './ingreso-egreso.model';
+import {AppState} from '../app.reducer';
 
 export interface IngresoEgresoState {
     items: IngresoEgresoModel[];
+}
+
+export interface IngresoEgresoAppState extends AppState {
+    ingresoEgreso: IngresoEgresoState;
 }
 
 const initState: IngresoEgresoState = {
@@ -26,4 +31,4 @@ export function IngresoEgresoReducer(state = initState, action: fromIngresoEgres
         default:
             return state;
     }
-};
+}
